@@ -29,6 +29,25 @@ let
       }
     else
       null;
+
+  # Recursive YAML writer for Nix attrsets
+  toYAML = attrs:
+    let
+      indent = level: lib.concatStrings (lib.replicate level "  ");
+      render = level: value:
+        if lib.isAttrs value then
+          lib.concatStringsSep "\n"
+            (lib.mapAttrsToList
+              (k: v: "${indent level}${k}: ${if lib.isAttrs v then "\n${render (level + 1) v}" else toString v}")
+              value)
+        else if lib.isList value then
+          lib.concatStringsSep "\n"
+            (map (v: "${indent level}- ${toString v}") value)
+        else
+          toString value;
+    in
+      render 0 attrs;
+
 in
 {
   imports = [
@@ -49,12 +68,20 @@ in
     (import ./zsh.nix)
   ];
 
-  home.file = {
-    ".local/share/omarchy/bin" = {
-      source = ../../bin;
-      recursive = true;
-    };
-  };
+  home.file = lib.mkMerge [
+    {
+      ".local/share/omarchy/bin" = {
+        source = ../../bin;
+        recursive = true;
+      };
+    }
+
+    # Only write the YAML file if a generated theme is used
+    (lib.mkIf (generatedColorScheme != null) {
+      "color-scheme.yaml".text = toYAML generatedColorScheme;
+    })
+  ];
+
   home.packages = packages.homePackages;
 
   colorScheme =
