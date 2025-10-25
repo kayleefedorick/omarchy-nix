@@ -1,4 +1,5 @@
-# Omarchy Nix
+# Kaylee's Omarchy Nix Config
+This is a fork of [omarchy-nix](https://github.com/henrysipp/omarchy-nix) by [henrysipp](https://github.com/henrysipp).
 
 Omarchy-nix (Omanix?) is an opinionated NixOS flake to help you get started as fast as possible with NixOS and Hyprland. It is primarily a reimplementation of [DHH's Omarchy](https://github.com/basecamp/omarchy) project - an opinionated Arch/Hyprland setup for modern web development.
 
@@ -16,7 +17,7 @@ Once ready, add this flake to your system configuration, you'll also need [home-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     omarchy-nix = {
-        url = "github:henrysipp/omarchy-nix";
+        url = "github:kayleefedorick/omarchy-nix";
         inputs.nixpkgs.follows = "nixpkgs";
         inputs.home-manager.follows = "home-manager";
     };
