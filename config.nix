@@ -10,6 +10,7 @@ lib: {
     };
     theme = lib.mkOption {
       type = lib.types.either (lib.types.enum [
+        "bugos"
         "tokyo-night"
         "kanagawa"
         "everforest"
@@ -20,7 +21,7 @@ lib: {
         "generated_light"
         "generated_dark"
       ]) lib.types.str;
-      default = "tokyo-night";
+      default = "bugos";
       description = "Theme to use for Omarchy configuration";
     };
     theme_overrides = lib.mkOption {

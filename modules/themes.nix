@@ -1,8 +1,14 @@
 {
+  "bugos" = {
+    base16-theme = "bugos";
+    vscode-theme = "Tokyo Night";
+  };
+  
   "tokyo-night" = {
     base16-theme = "tokyo-night-dark";
     vscode-theme = "Tokyo Night";
   };
+  
   "catppuccin-macchiato" = {
     vscode-theme = "Catppuccin Macchiato";
   };

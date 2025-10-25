@@ -2,6 +2,9 @@ config:
 let
   cfg = config.omarchy;
   wallpapers = {
+    "bugos" = [
+    	"Balcony.png"
+    ];
     "tokyo-night" = [
       "1-Pawel-Czerwinski-Abstract-Purple-Blue.jpg"
     ];
