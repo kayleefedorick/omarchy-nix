@@ -101,6 +101,10 @@ in
       package = if config.omarchy.theme == "bugos" then pkgs.dracula-theme
       else pkgs.gnome-themes-extra;
     };
+    font = {
+      name = "Noto Sans";
+      size = 10;
+    };
   };
 
   home.sessionVariables = {
