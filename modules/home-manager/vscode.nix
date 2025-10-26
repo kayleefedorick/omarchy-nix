@@ -36,7 +36,7 @@ in
             name = "theme-dracula";
             publisher = "dracula-theme";
             version = "2.25.1";
-            sha256 = "sha256-nZirzVvM160ZTpBLTimL2X35sIGy5j2LQOok7a2Yc7U=";
+            sha256 = "sha256-ijGbdiqbDQmZYVqZCx2X4W7KRNV3UDddWvz+9x/vfcA=";
           }
           {
             name = "everforest";
