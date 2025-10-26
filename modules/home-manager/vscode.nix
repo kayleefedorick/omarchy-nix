@@ -16,12 +16,12 @@ in
       # This is actually turning out to be super annoying whenever I need
       # to change settings on the fly. Disabling until I have time to research.
       # In the meantime themes are broken
-      # userSettings =
-      # {
-      #   "workbench.colorTheme" = theme.vscode-theme;
+      userSettings =
+      {
+          "workbench.colorTheme" = theme.vscode-theme;
       #   "vim.useCtrlKeys" = false;
       #   "editor.minimap.enabled" = false;
-      # }
+      }
 
       # // cfg.vscode_settings;
 
@@ -32,6 +32,12 @@ in
           vscodevim.vim
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "theme-dracula";
+            publisher = "dracula-theme";
+            version = "2.25.1";
+            sha256 = "sha256-nZirzVvM160ZTpBLTimL2X35sIGy5j2LQOok7a2Yc7U=";
+          }
           {
             name = "everforest";
             publisher = "sainnhe";
