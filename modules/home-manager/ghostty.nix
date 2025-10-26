@@ -18,7 +18,7 @@ in
       window-decoration = "none";
 
       font-family = cfg.primary_font;
-      font-size = 12;
+      font-size = 10;
 
       theme = "omarchy";
       keybind = [
