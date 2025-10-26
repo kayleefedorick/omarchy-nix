@@ -25,8 +25,8 @@
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    #gestures = lib.mkDefault {
-    #  workspace_swipe = false;
-    #};
+    gesture = [
+      "3, horizontal, workspace"
+    ];
   };
 }
