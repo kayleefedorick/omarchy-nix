@@ -39,7 +39,7 @@ lib: {
     };
     primary_font = lib.mkOption {
       type = lib.types.str;
-      default = "Liberation Sans 11";
+      default = "Caskaydia Mono Nerd Font";
     };
     vscode_settings = lib.mkOption {
       type = lib.types.attrs;
