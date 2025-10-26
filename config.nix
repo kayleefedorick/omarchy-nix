@@ -66,7 +66,7 @@ lib: {
         "SUPER, N, exec, $terminal -e micro"
         "SUPER, T, exec, $terminal -e btop"
         "SUPER, D, exec, $terminal -e lazydocker"
-        "SUPER, slash, exec, bitwarden-desktop"
+        "SUPER, slash, exec, bitwarden"
 
         "SUPER, C, exec, $webapp=https://chatgpt.com"
         "SUPER, Y, exec, $webapp=https://youtube.com/"
