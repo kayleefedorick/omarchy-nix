@@ -12,7 +12,7 @@ in
     enable = true;
     themeFile = "Dracula";
     font.name = cfg.primary_font;
-    font.size = 11;
+    font.size = 10;
     enableGitIntegration = true;
     settings = {
       confirm_os_window_close = 0;
