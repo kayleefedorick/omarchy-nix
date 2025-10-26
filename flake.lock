@@ -36,11 +36,11 @@
     "base16-schemes": {
       "flake": false,
       "locked": {
-        "lastModified": 1761484960,
-        "narHash": "sha256-9ZFRIJx8RTmQF81LHhw5OwRQoTPYUiq9kNLKbSNF2p0=",
+        "lastModified": 1761486276,
+        "narHash": "sha256-fDk82c5MSOv1tWr0ddGOAbAX2xWqDVOatwDJtHuuAL0=",
         "owner": "kayleefedorick",
         "repo": "base16-schemes",
-        "rev": "ead3a3e99680f47d34fe5dbdf3c6a00b79580e2f",
+        "rev": "c239c9aef22d50d28b3595e89f91a345ece8d069",
         "type": "github"
       },
       "original": {
