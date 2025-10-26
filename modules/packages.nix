@@ -41,6 +41,7 @@ let
     with pkgs;
     [
       # TUIs
+      bitwarden-cli
       lazygit
       lazydocker
       btop
@@ -48,6 +49,7 @@ let
       fastfetch
 
       # GUIs
+      bitwarden-desktop
       chromium
       vlc
 

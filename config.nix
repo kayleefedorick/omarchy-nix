@@ -58,25 +58,18 @@ lib: {
       type = lib.types.listOf lib.types.str;
       description = "A list of single keystroke key bindings to launch common apps.";
       default = [
-        "SUPER, A, exec, $webapp=https://chatgpt.com"
-        "SUPER SHIFT, A, exec, $webapp=https://grok.com"
-        "SUPER, C, exec, $webapp=https://app.hey.com/calendar/weeks/"
-        "SUPER, E, exec, $webapp=https://app.hey.com"
-        "SUPER, Y, exec, $webapp=https://youtube.com/"
-        "SUPER SHIFT, G, exec, $webapp=https://web.whatsapp.com/"
-        "SUPER, X, exec, $webapp=https://x.com/"
-        "SUPER SHIFT, X, exec, $webapp=https://x.com/compose/post"
-
         "SUPER, return, exec, $terminal"
         "SUPER, F, exec, $fileManager"
         "SUPER, B, exec, $browser"
         "SUPER, M, exec, $music"
-        "SUPER, N, exec, $terminal -e nvim"
+        "SUPER, N, exec, $terminal -e micro"
+        "SUPER, E, exec, $terminal -e code"
         "SUPER, T, exec, $terminal -e btop"
         "SUPER, D, exec, $terminal -e lazydocker"
-        "SUPER, G, exec, $messenger"
-        "SUPER, O, exec, obsidian -disable-gpu"
-        "SUPER, slash, exec, $passwordManager"
+        "SUPER, slash, exec, bitwarden-desktop"
+
+        "SUPER, C, exec, $webapp=https://chatgpt.com"
+        "SUPER, Y, exec, $webapp=https://youtube.com/"
       ];
     };
     exclude_packages = lib.mkOption {
