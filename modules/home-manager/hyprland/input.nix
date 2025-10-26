@@ -20,13 +20,13 @@
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
       touchpad = {
-        natural_scroll = false;
+        natural_scroll = true;
       };
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    gestures = lib.mkDefault {
-      workspace_swipe = false;
-    };
+    #gestures = lib.mkDefault {
+    #  workspace_swipe = false;
+    #};
   };
 }
