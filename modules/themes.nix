@@ -1,7 +1,7 @@
 {
   "bugos" = {
     base16-theme = "bugos";
-    vscode-theme = "Tokyo Night";
+    vscode-theme = "Dracula";
   };
   
   "tokyo-night" = {
