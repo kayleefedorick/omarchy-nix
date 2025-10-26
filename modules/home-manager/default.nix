@@ -67,7 +67,6 @@ in
     (import ./wofi.nix)
     (import ./zoxide.nix)
     (import ./zsh.nix)
-    #(import ./gtk.nix)
   ];
 
   home.file = lib.mkMerge [
@@ -101,6 +100,12 @@ in
       package = if config.omarchy.theme == "bugos" then pkgs.dracula-theme
       else pkgs.gnome-themes-extra;
     };
+  };
+
+  home.sessionVariables = {
+    GTK_THEME = if config.omarchy.theme == "generated_light" then "Adwaita" 
+    else if config.omarchy.theme == "bugos" then "Dracula"
+    else "Adwaita:dark";
   };
 
   programs.neovim.enable = false;

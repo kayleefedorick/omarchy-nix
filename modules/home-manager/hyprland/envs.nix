@@ -45,10 +45,10 @@ in
 
       # Use XCompose file
       "XCOMPOSEFILE,~/.XCompose"
-      "EDITOR,nvim"
+      "EDITOR,micro"
 
       # GTK theme
-      "GTK_THEME,${if cfg.theme == "generated_light" then "Adwaita" else "Adwaita:dark"}"
+      "GTK_THEME,${if cfg.theme == "generated_light" then "Adwaita" else if cfg.theme == "bugos" then "Dracula" else  "Adwaita:dark"}"
 
       # Podman compatibility. Probably need to add cfg.env?
       # "DOCKER_HOST,unix://$XDG_RUNTIME_DIR/podman/podman.sock"

@@ -49,6 +49,7 @@ let
       fastfetch
 
       # GUIs
+      nemo
       bitwarden-desktop
       chromium
       vlc

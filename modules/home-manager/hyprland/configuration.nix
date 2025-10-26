@@ -19,7 +19,7 @@ in
   wayland.windowManager.hyprland.settings = {
     # Default applications
     "$terminal" = lib.mkDefault "kitty";
-    "$fileManager" = lib.mkDefault "nautilus --new-window";
+    "$fileManager" = lib.mkDefault "nemo";
     "$browser" = lib.mkDefault "chromium --new-window --ozone-platform=wayland";
     "$music" = lib.mkDefault "spotify";
     "$passwordManager" = lib.mkDefault "bitwarden";
