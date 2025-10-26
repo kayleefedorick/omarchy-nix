@@ -21,7 +21,7 @@ in
           "workbench.colorTheme" = theme.vscode-theme;
       #   "vim.useCtrlKeys" = false;
       #   "editor.minimap.enabled" = false;
-      }
+      };
 
       # // cfg.vscode_settings;
 
