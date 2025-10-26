@@ -95,8 +95,11 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = if config.omarchy.theme == "generated_light" then "Adwaita" else "Adwaita:dark";
-      package = pkgs.gnome-themes-extra;
+      name = if config.omarchy.theme == "generated_light" then "Adwaita" 
+      else if config.omarchy.theme == "bugos" then "dracula-theme"
+      else "Adwaita:dark";
+      package = if config.omarchy.theme == "bugos" then pkgs.dracula-theme
+      else pkgs.gnome-themes-extra;
     };
   };
 
