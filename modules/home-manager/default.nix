@@ -56,6 +56,7 @@ in
     (import ./hyprpaper.nix)
     (import ./hypridle.nix)
     (import ./ghostty.nix)
+    (import ./micro.nix)
     (import ./btop.nix)
     (import ./direnv.nix)
     (import ./git.nix)
