@@ -55,7 +55,6 @@ in
     (import ./hyprlock.nix inputs)
     (import ./hyprpaper.nix)
     (import ./hypridle.nix)
-    #(import ./ghostty.nix)
     (import ./kitty.nix)
     (import ./micro.nix)
     (import ./btop.nix)
@@ -68,6 +67,7 @@ in
     (import ./wofi.nix)
     (import ./zoxide.nix)
     (import ./zsh.nix)
+    (import ./gtk.nix)
   ];
 
   home.file = lib.mkMerge [
