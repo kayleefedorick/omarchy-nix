@@ -49,9 +49,7 @@ let
 
       # GUIs
       chromium
-      obsidian
       vlc
-      signal-desktop
 
       # Development tools
       github-desktop
@@ -62,8 +60,6 @@ let
       ffmpeg
     ]
     ++ lib.optionals (pkgs.system == "x86_64-linux") [
-      typora
-      dropbox
       spotify
     ];
 
