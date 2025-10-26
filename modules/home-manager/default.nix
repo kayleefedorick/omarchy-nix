@@ -3,6 +3,7 @@ inputs:
   config,
   pkgs,
   lib,
+  fonts,
   ...
 }:
 let
