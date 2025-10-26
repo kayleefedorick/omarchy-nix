@@ -105,6 +105,10 @@ in
       name = "Noto Sans";
       size = 10;
     };
+    iconTheme = {
+      name = if config.omarchy.theme == "bugos" then "candy-icons" else "Adwaita";
+      package = if config.omarchy.theme == "bugos" then pkgs.candy-icons else pkgs.gnome-themes-extra;
+    };
   };
 
   home.sessionVariables = {
