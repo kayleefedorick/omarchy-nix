@@ -8,7 +8,7 @@ let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
   backgroundRgb = "rgb(${convert ", " palette.base00})";
-  foregroundRgb = "rgb(${convert ", " palette.base0E})";
+  foregroundRgb = "rgb(${convert ", " palette.base0B})";
   accent1Rgb = "rgb(${convert ", " palette.base08})";
   accent2Rgb = "rgb(${convert ", " palette.base05})";
 in
@@ -27,6 +27,7 @@ in
 
         window#waybar {
           background-color: ${backgroundRgb};
+          opacity: 0.9;
         }
 
         #clock {
@@ -100,7 +101,7 @@ in
           on-click = "ghostty -e btop";
         };
         clock = {
-          format = "{:%A %I:%M %p}";
+          format = "Buggy {:%A %I:%M %p}";
           format-alt = "{:%d %B W%V %Y}";
           tooltip = false;
         };
