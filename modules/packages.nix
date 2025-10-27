@@ -52,7 +52,7 @@ let
       nemo
       bitwarden-desktop
       chromium
-      vlc
+      celluloid
 
       # Development tools
       github-desktop
