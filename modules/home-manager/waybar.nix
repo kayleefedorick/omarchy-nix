@@ -27,7 +27,6 @@ in
 
         window#waybar {
           background-color: ${backgroundRgb};
-          opacity: 0.9;
         }
 
         #hyprland-window,
@@ -103,7 +102,7 @@ in
           on-click = "ghostty -e btop";
         };
         clock = {
-          format = "Buggy {:%A %I:%M %p}";
+          format = " Buggy {:%A %I:%M %p}";
           format-alt = "{:%d %B W%V %Y}";
           tooltip = false;
         };

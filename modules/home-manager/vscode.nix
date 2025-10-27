@@ -19,6 +19,7 @@ in
       userSettings =
       {
           "workbench.colorTheme" = theme.vscode-theme;
+          "editor.fontFamily" = "'DroidSansM Nerd Font', 'monospace', monospace";
       #   "vim.useCtrlKeys" = false;
       #   "editor.minimap.enabled" = false;
       };
