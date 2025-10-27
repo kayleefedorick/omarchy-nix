@@ -43,5 +43,6 @@ in
     noto-fonts
     noto-fonts-emoji
     nerd-fonts.caskaydia-mono
+    nerd-fonts.droid-sans-mono
   ];
 }

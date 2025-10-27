@@ -39,7 +39,7 @@ lib: {
     };
     primary_font = lib.mkOption {
       type = lib.types.str;
-      default = "Caskaydia Mono Nerd Font";
+      default = "DroidSansM Nerd Font";
     };
     vscode_settings = lib.mkOption {
       type = lib.types.attrs;
