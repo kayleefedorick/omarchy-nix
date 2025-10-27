@@ -8,7 +8,7 @@ let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
   backgroundRgb = "rgb(${convert ", " palette.base00})";
-  foregroundRgb = "rgb(${convert ", " palette.base05})";
+  foregroundRgb = "rgb(${convert ", " palette.base08})";
 in
 {
   home.file = {
