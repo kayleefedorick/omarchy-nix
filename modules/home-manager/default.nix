@@ -117,5 +117,14 @@ in
     else "Adwaita:dark";
   };
 
+  xdg.terminal-exec = {
+  	enable = true;
+  	settings = {
+  		default = [
+  			"kitty.desktop"
+  		];
+  	};
+  };
+
   programs.neovim.enable = false;
 }
