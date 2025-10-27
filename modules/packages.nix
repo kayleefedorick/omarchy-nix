@@ -21,7 +21,7 @@ let
     git
     vim
     libnotify
-    nautilus
+    nemo
     alejandra
     blueberry
     clipse
@@ -49,7 +49,6 @@ let
       fastfetch
 
       # GUIs
-      nemo
       bitwarden-desktop
       chromium
       celluloid
