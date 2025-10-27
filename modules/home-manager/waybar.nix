@@ -8,7 +8,9 @@ let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
   backgroundRgb = "rgb(${convert ", " palette.base00})";
-  foregroundRgb = "rgb(${convert ", " palette.base08})";
+  foregroundRgb = "rgb(${convert ", " palette.base0E})";
+  accent1Rgb = "rgb(${convert ", " palette.base08})";
+  accent2Rgb = "rgb(${convert ", " palette.base05})";
 in
 {
   home.file = {
@@ -25,6 +27,20 @@ in
 
         window#waybar {
           background-color: ${backgroundRgb};
+        }
+
+        #clock {
+          color: ${accent2Rgb};
+        }
+
+        #tray,
+        #bluetooth,
+        #network,
+        #wireplumber,
+        #cpu,
+        #power-profiles-daemon,
+        #battery {
+          color: ${accent1Rgb};
         }
       '';
     };
