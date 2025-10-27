@@ -30,6 +30,7 @@ in
           opacity: 0.9;
         }
 
+        #hyprland-window,
         #clock {
           color: ${accent2Rgb};
         }
@@ -59,7 +60,7 @@ in
           "hyprland/workspaces"
         ];
         modules-center = [
-          "clock"
+          "hyprland/window"
         ];
         modules-right = [
           # "custom/dropbox"
@@ -70,6 +71,7 @@ in
           "cpu"
           "power-profiles-daemon"
           "battery"
+          "clock"
         ];
         "hyprland/workspaces" = {
           on-click = "activate";
@@ -156,7 +158,7 @@ in
               "󰁹"
             ];
           };
-          format-full = "Charged ";
+          format-full = "";
           tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
           tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
           states = {
