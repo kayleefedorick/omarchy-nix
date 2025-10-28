@@ -11,8 +11,8 @@ let
   foregroundRgb = "rgb(${convert ", " palette.base05})";
   accent1Rgb = "rgb(${convert ", " palette.base08})";     # pink
   accent2Rgb = "rgb(${convert ", " palette.base0B})";     # yellow
-  accent3Rgb = "rgb(${convert ", " palette.base0A})";     # green
-  accent4Rgb = "rgb(${convert ", " palette.base04})";     # cyan
+  accent3Rgb = "rgb(${convert ", " palette.base03})";     # periwinkle
+  accent4Rgb = "rgb(${convert ", " palette.base09})";     # purple
 in
 {
   home.file = {
@@ -30,19 +30,19 @@ in
         @define-color accent4 ${accent4Rgb};
 
         * {
-          color: @foreground; 
+          color: @accent2; 
         }
         window#waybar {
           background-color: @background;
         }
         #window * {
-          color: @foreground;
+          color: @accent2;
         }
         #clock {
           color: @accent4;
         }
         #workspaces * {
-          color: @accent2;
+          color: @accent3;
         }
         #tray,
         #bluetooth,
@@ -51,7 +51,7 @@ in
         #cpu,
         #power-profiles-daemon,
         #battery {
-          color: @accent1;
+          color: @accent3;
         }
       '';
     };
