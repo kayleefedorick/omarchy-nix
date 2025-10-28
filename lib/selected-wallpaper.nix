@@ -3,7 +3,7 @@ let
   cfg = config.omarchy;
   wallpapers = {
     "bugos" = [
-    	"Purple-Abstract-2.jpg"
+    	"3-Milad-Fakurian-Abstract-Purple-Blue.jpg"
     ];
     "tokyo-night" = [
       "1-Pawel-Czerwinski-Abstract-Purple-Blue.jpg"
