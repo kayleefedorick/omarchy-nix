@@ -13,6 +13,7 @@ let
 in
 {
   security.rtkit.enable = true;
+  services.power-profiles-daemon.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
