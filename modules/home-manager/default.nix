@@ -66,6 +66,7 @@ in
     (import ./vscode.nix)
     (import ./waybar.nix inputs)
     (import ./wofi.nix)
+    (import ./zen-browser.nix inputs)
     (import ./zoxide.nix)
     (import ./zsh.nix)
   ];

@@ -50,7 +50,6 @@ let
 
       # GUIs
       bitwarden-desktop
-      chromium
       celluloid
 
       # Development tools
