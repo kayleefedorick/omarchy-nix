@@ -6,18 +6,20 @@
   min-height: 0;
   font-family: CaskaydiaMono Nerd Font;
   font-size: 14px;
-  /* background-color: transparent; */
 }
-
 
 #workspaces {
   margin-left: 7px;
 }
 
 #workspaces button {
-  all: initial;
   padding: 2px 6px;
   margin-right: 3px;
+}
+
+#window * {
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 #custom-dropbox,

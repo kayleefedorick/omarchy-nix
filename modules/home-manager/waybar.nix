@@ -11,8 +11,8 @@ let
   foregroundRgb = "rgb(${convert ", " palette.base05})";
   accent1Rgb = "rgb(${convert ", " palette.base08})";     # pink
   accent2Rgb = "rgb(${convert ", " palette.base0B})";     # yellow
-  accent3Rgb = "rgb(${convert ", " palette.base09})";     # purple
-  accent4Rgb = "rgb(${convert ", " palette.base0C})";     # aqua
+  accent3Rgb = "rgb(${convert ", " palette.base0A})";     # green
+  accent4Rgb = "rgb(${convert ", " palette.base04})";     # cyan
 in
 {
   home.file = {
@@ -23,20 +23,26 @@ in
     ".config/waybar/theme.css" = {
       text = ''
         @define-color background ${backgroundRgb};
+        @define-color foreground ${foregroundRgb};
+        @define-color accent1 ${accent1Rgb};
+        @define-color accent2 ${accent2Rgb};
+        @define-color accent3 ${accent3Rgb};
+        @define-color accent4 ${accent4Rgb};
+
         * {
-          color: ${foregroundRgb}; 
+          color: @foreground; 
         }
         window#waybar {
-          background-color: ${backgroundRgb};
+          background-color: @background;
         }
-        #window {
-          color: ${accent2Rgb};
+        #window * {
+          color: @foreground;
         }
         #clock {
-          color: ${accent3Rgb};
+          color: @accent4;
         }
-        #workspaces button {
-          color: ${accent4Rgb};
+        #workspaces * {
+          color: @accent2;
         }
         #tray,
         #bluetooth,
@@ -45,7 +51,7 @@ in
         #cpu,
         #power-profiles-daemon,
         #battery {
-          color: ${accent1Rgb};
+          color: @accent1;
         }
       '';
     };
