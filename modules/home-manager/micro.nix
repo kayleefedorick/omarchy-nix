@@ -9,7 +9,7 @@ in
   programs.micro = {
     enable = true;
     settings = {
-      colorscheme = "simple";    
+      colorscheme = "dracula-tc";    
       };
   };
 }
