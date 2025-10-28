@@ -8,9 +8,11 @@ let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
   backgroundRgb = "rgb(${convert ", " palette.base00})";
-  foregroundRgb = "rgb(${convert ", " palette.base0B})";
-  accent1Rgb = "rgb(${convert ", " palette.base08})";
-  accent2Rgb = "rgb(${convert ", " palette.base05})";
+  foregroundRgb = "rgb(${convert ", " palette.base05})";
+  accent1Rgb = "rgb(${convert ", " palette.base08})";     # pink
+  accent2Rgb = "rgb(${convert ", " palette.base0B})";     # yellow
+  accent3Rgb = "rgb(${convert ", " palette.base09})";     # purple
+  accent4Rgb = "rgb(${convert ", " palette.base0C})";     # aqua
 in
 {
   home.file = {
@@ -24,16 +26,18 @@ in
         * {
           color: ${foregroundRgb}; 
         }
-
         window#waybar {
           background-color: ${backgroundRgb};
         }
-
-        #hyprland-window,
-        #clock {
+        #window {
           color: ${accent2Rgb};
         }
-
+        #clock {
+          color: ${accent3Rgb};
+        }
+        #workspaces button {
+          color: ${accent4Rgb};
+        }
         #tray,
         #bluetooth,
         #network,
