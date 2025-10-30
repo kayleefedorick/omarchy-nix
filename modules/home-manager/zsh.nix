@@ -23,6 +23,8 @@
         theme = "robbyrussell";
         plugins = [
 	        "git"
+          "copyfile"
+          "copypath"
         ];
     };
 
