@@ -1,67 +1,163 @@
 # Kaylee's Omarchy Nix Config
-This is a fork of [omarchy-nix](https://github.com/henrysipp/omarchy-nix) by [henrysipp](https://github.com/henrysipp).
+A modern, opinionated **NixOS + Hyprland** configuration, forked from [henrysipp/omarchy-nix](https://github.com/henrysipp/omarchy-nix).
+This fork builds on the original project with **new themes, packages, UI tweaks, browser changes, and shell improvements** for a smooth and personal workflow.
 
-Omarchy-nix (Omanix?) is an opinionated NixOS flake to help you get started as fast as possible with NixOS and Hyprland. It is primarily a reimplementation of [DHH's Omarchy](https://github.com/basecamp/omarchy) project - an opinionated Arch/Hyprland setup for modern web development.
+## ✨ Overview
 
-__This isn't meant to be full feature parity with Omarchy and likely never will be, especially with how fast the feature development and funding has been for that project. Instead, think of this as more of a launch pad to get your own similar Nix config set up!__
+**Omarchy Nix (Omanix?)** is an opinionated NixOS flake to help you get started fast with **NixOS** and **Hyprland**.
+It reimplements [DHH’s Omarchy](https://github.com/dhh/omarchy) (an Arch-based setup for modern web development) in NixOS.
 
-## Quick Start
+Kaylee’s fork adds:
 
-To get started you'll first need to set up a fresh [NixOS](https://nixos.org/) install. Just download and create a bootable USB and you should be good to go.
+* 🌈 Refined **Waybar styling**, colors, and clock design
+* 🖼️ Custom **wallpapers and themes** (default BugOS theme - based on Dracula)
+* 💻 **Zen Browser** set as the default (with custom policies and Firefox extensions)
+* 🧩 Preinstalled **Bitwarden**, **TransparentZen**, and other browser tools
+* 🐚 Enhanced **Zsh configuration**, plugins, and prompt customization
+* 🧰 Curated package list (Micro, Nemo, Kitty, Celluloid, and more)
+* 🔋 Added **power-profiles-daemon** and natural scrolling
+* ⚙️ Simplified **OS update workflow** via an `update` and `update-all` aliases
+* 🎨 GTK and terminal font tweaks, better scaling, and consistent dark theme defaults
 
 
-Once ready, add this flake to your system configuration, you'll also need [home-manager](https://github.com/nix-community/home-manager) as well:
-(You can find my personal nix setup [here](https://github.com/henrysipp/nix-setup) too if you need a reference.)
+## 🚀 Quick Start
+
+1. **Install NixOS**
+   Get a fresh install of NixOS — any recent ISO (25.05+ recommended).
+
+2. **Add this flake** to your configuration:
+
 ```nix
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    omarchy-nix = {
-        url = "github:kayleefedorick/omarchy-nix";
-        inputs.nixpkgs.follows = "nixpkgs";
-        inputs.home-manager.follows = "home-manager";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+	description = "omarchy-nix flake";
+
+	inputs = {
+		nixpkgs.url = "github:NixOS/nixpkgs";
+		omarchy-nix = {
+			url = "github:kayleefedorick/omarchy-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.home-manager.follows = "home-manager";
+		};
+		home-manager = {
+			url = "github:nix-community/home-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+	};
+
+	outputs = { self, nixpkgs, omarchy-nix, home-manager }@inputs: {
+		nixosConfigurations.nixos= nixpkgs.lib.nixosSystem {
+			modules = [
+				./configuration.nix
+				omarchy-nix.nixosModules.default
+				home-manager.nixosModules.home-manager
+				{
+					omarchy = {
+						full_name = "Your Name Here";
+						email_address = "youremail@address.com";
+						theme = "bugos";
+						scale = 1; # set to 2 for hidpi displays
+						#theme_overrides = {
+						#  wallpaper_path = ./default.png;
+						#};
+						
+					};
+					home-manager = {
+						users.yourusername = {
+							imports = [ omarchy-nix.homeManagerModules.default ];
+						};
+                        useGlobalPkgs = true;
+					};
+				}
+			];
+		};
+	};
+}
+```
+
+2. **Modify your base configuration** as needed. Here is an example `configuration.nix`:
+```nix
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Networking
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
 
-  outputs = { nixpkgs, omarchy-nix, home-manager, ... }: {
-    nixosConfigurations.your-hostname = nixpkgs.lib.nixosSystem {
-      modules = [
-        omarchy-nix.nixosModules.default
-        home-manager.nixosModules.home-manager #Add this import
-        {
-          # Configure omarchy
-          omarchy = {
-            full_name = "Your Name";
-            email_address = "your.email@example.com";
-            theme = "tokyo-night";
-          };
-          
-          home-manager = {
-            users.your-username = {
-              imports = [ omarchy-nix.homeManagerModules.default ]; # And this one
-            };
-          };
-        }
-      ];
-    };
+  # Shell
+  programs.zsh.enable = true;
+
+  # Define user account
+  # Don't forget to set a password with ‘passwd’
+  users.users.yourusername = {
+    isNormalUser = true;
+    description = "Your User Name";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
+
+  # Setup Home Manager for user account
+  home-manager.users.yourusername = { pkgs, ... }: {
+  	home.packages = [ pkgs.atool pkgs.httpie ];
+  	programs.bash.enable = true;
+  	home.stateVersion = "25.05";
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+     micro
+     git
+     wget
+  ];
+
+  # Default editor
+  environment.variables.EDITOR = "micro";
+
+  system.stateVersion = "25.05";
+
 }
 ```
 
 ## Configuration Options
 
-I've specified some basic configuration options to help you get started with initial setup, as well as some simple overrides for common configuration settings I found I was modifying often. These are likely subject to change with future versions as I iron things out.
+Basic customization is exposed through the `omarchy` module:
 
-Refer to [the root configuration](https://github.com/henrysipp/omarchy-nix/blob/main/config.nix) file for more information on what options are available.
+* `full_name` – your full name for Git and app configs
+* `email_address` – email for Git commits
+* `theme` – global color scheme (see list below)
+* `theme_overrides.wallpaper_path` – custom wallpaper
+
+You can tweak font, scaling, terminal, GTK theme, browser policies, and more through your home-manager layer.
 
 ### Themes
 
 Omarchy-nix includes several predefined themes:
-- `tokyo-night` (default)
+- `bugos` (default) *(new)* - based on Dracula
+- `tokyo-night`
 - `kanagawa`
 - `everforest`
 - `catppuccin`
@@ -102,6 +198,13 @@ Any theme can be customized with a custom wallpaper by specifying `wallpaper_pat
 ```
 
 Generated themes automatically extract colors from the wallpaper and create a matching color scheme for all Omarchy applications (terminal, editor, launcher, etc.). 
+
+## Updating
+
+Aliases are provided to make updating omarchy-nix easier.
+
+* `update-all` alias – update all flake inputs, push new inputs to repo (point to your own repo as needed), and rebuild system in one command
+* `update` alias - update omarchy-nix flake only and rebuild system
 
 ## License
 
