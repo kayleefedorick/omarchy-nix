@@ -20,7 +20,7 @@ in
     # Default applications
     "$terminal" = lib.mkDefault "kitty";
     "$fileManager" = lib.mkDefault "nemo";
-    "$browser" = lib.mkDefault "chromium --new-window --ozone-platform=wayland";
+    "$browser" = lib.mkDefault "zen";
     "$music" = lib.mkDefault "spotify";
     "$passwordManager" = lib.mkDefault "bitwarden";
     "$webapp" = lib.mkDefault "$browser --app";
