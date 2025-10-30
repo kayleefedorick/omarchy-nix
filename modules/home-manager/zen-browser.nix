@@ -24,7 +24,13 @@ inputs:
             default_area = "menupanel";
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
             installation_mode = "force_installed";
-            private_browsing = false;
+            private_browsing = true;
+          };
+          "{74186d10-f6f2-4f73-b33a-83bb72e50654}" = {
+            default_area = "menupanel";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/transparent-zen/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = true;
           };
         };
       AutofillAddressEnabled = true;
