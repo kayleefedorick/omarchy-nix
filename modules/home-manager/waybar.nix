@@ -42,7 +42,7 @@ in
           color: @accent4;
         }
         #workspaces * {
-          color: @accent3;
+          color: @accent4;
         }
         #tray,
         #bluetooth,
