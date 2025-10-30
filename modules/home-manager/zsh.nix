@@ -14,6 +14,7 @@
       la = "eza -la --icons=auto";
       update = "cd /etc/nixos && sudo nix flake update omarchy-nix && sudo nixos-rebuild switch";
       update-all = "cd ~/git/omarchy-nix && sudo nix flake update omarchy-nix && git add . && git commit -m 'Update inputs' && git push && cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch";
+      cat = "bat";
     };
 
     setOptions = [
@@ -35,6 +36,7 @@
       if [[ "$SHOW_USER" == "true" ]]; then
         RPROMPT="%F{white}(%F{magenta}%n%F{white}@%F{cyan}%m%F{white})"
       fi
+      export BAT_THEME="Dracula"
     '';
   };
 }

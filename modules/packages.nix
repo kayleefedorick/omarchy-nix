@@ -50,6 +50,7 @@ let
       btop
       powertop
       fastfetch
+      bat
 
       # GUIs
       bitwarden-desktop
