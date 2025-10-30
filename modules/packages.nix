@@ -34,6 +34,9 @@ let
     unzip
     wget
     gnumake
+    xclip
+    xsel
+    wl-clipboard
   ];
 
   # Discretionary packages - can be excluded by user
