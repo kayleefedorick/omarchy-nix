@@ -13,6 +13,7 @@
       ls = "eza --icons=auto";
       la = "eza -la --icons=auto";
       update = "cd /etc/nixos && sudo nix flake update omarchy-nix && sudo nixos-rebuild switch";
+      update-all = "cd ~/git/omarchy-nix && sudo nix flake update omarchy-nix && git add . && git commit -m 'Update inputs' && git push && cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch";
     };
 
     setOptions = [
