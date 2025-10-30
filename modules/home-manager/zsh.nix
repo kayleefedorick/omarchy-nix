@@ -1,4 +1,7 @@
-{ ... }:
+{ 
+  lib,
+  ... 
+}:
 {
   programs.zsh = {
     enable = true;
@@ -22,5 +25,13 @@
 	        "git"
         ];
     };
+
+    initContent = lib.mkAfter ''
+      # Show user/host name
+      export SHOW_USER=true
+      if [[ "$SHOW_USER" == "true" ]]; then
+        RPROMPT="%F{white}(%F{magenta}%n%F{white}@%F{cyan}%m%F{white})"
+      fi
+    '';
   };
 }
