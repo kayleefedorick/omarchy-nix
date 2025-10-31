@@ -29,6 +29,7 @@ let
     zoxide
     ripgrep
     eza
+    bat
     fd
     curl
     unzip
@@ -50,7 +51,8 @@ let
       btop
       powertop
       fastfetch
-      bat
+      hyfetch
+      pastel
 
       # GUIs
       bitwarden-desktop
