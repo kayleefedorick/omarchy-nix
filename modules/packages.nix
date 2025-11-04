@@ -57,6 +57,7 @@ let
       # GUIs
       bitwarden-desktop
       celluloid
+      networkmanagerapplet
 
       # Development tools
       github-desktop
