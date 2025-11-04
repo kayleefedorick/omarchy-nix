@@ -50,6 +50,7 @@ in
           "clock#separator"
           "clock#minute"
           "clock#pm"
+          "custom/lock"
 
 
         ];
@@ -191,15 +192,13 @@ in
             performance = "󰡴";
           };
         };
-        # "custom/dropbox" = {
-        #   format = "";
-        #   on-click = "nautilus ~/Dropbox";
-        #   exec = "dropbox-cli status";
-        #   return-type = "text";
-        #   interval = 5;
-        #   tooltip = true;
-        #   tooltip-format = "{}";
-        # };
+        "custom/lock" = {
+          format = "";
+          on-click = "hyprlock";
+          exec = "hyprlock";
+          tooltip = true;
+          tooltip-format = "Lock session";
+        };
       }
     ];
   };

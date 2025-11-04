@@ -62,6 +62,8 @@ window#waybar {
   margin-right: 0px;
 }
 
+#custom-lock { color: @white; }
+
 #custom-drive.on { color: @green; }
 #custom-drive.off { color: @white; }
 #custom-vpn.off { color: @white; }
