@@ -48,7 +48,7 @@ let
       bitwarden-cli
       lazygit
       lazydocker
-      btop
+      htop
       powertop
       fastfetch
       hyfetch

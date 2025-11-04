@@ -79,7 +79,7 @@ in
         cpu = {
           interval = 5;
           format = "󰍛";
-          on-click = "kitty -e btop";
+          on-click = "kitty -e htop";
         };
         "clock#hour" = {
           format = " {:%I}";
@@ -153,7 +153,7 @@ in
               "󰁹"
             ];
           };
-          format-full = "";
+          format-full = "󰂅";
           tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
           tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
           states = {
@@ -164,7 +164,7 @@ in
         bluetooth = {
           format = "󰂯";
           format-disabled = "󰂲";
-          format-connected = "";
+          format-connected = "󰂯";
           tooltip-format = "Devices connected: {num_connections}";
           on-click = "blueberry";
         };
