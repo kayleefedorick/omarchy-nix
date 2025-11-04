@@ -45,7 +45,13 @@ in
           "cpu"
           "power-profiles-daemon"
           "battery"
-          "clock"
+          "clock#date"
+          "clock#hour"
+          "clock#separator"
+          "clock#minute"
+          "clock#pm"
+
+
         ];
         "hyprland/workspaces" = {
           on-click = "activate";
@@ -73,11 +79,27 @@ in
         cpu = {
           interval = 5;
           format = "󰍛";
-          on-click = "ghostty -e btop";
+          on-click = "kitty -e btop";
         };
-        clock = {
-          format = " Buggy {:%A %I:%M %p}";
-          format-alt = "{:%d %B W%V %Y}";
+        "clock#hour" = {
+          format = " {:%I}";
+          tooltip = false;
+        };
+        "clock#minute" = {
+          format = "{:%M}";
+          tooltip = false;
+        };
+        "clock#pm" = {
+          format = " {:%p} ";
+          tooltip = false;
+        };
+        "clock#date" = {
+          format = " Buggy {:%A}";
+          tooltip = true;
+          tooltip-format = "{:%d %B W%V %Y}";
+        };
+        "clock#separator" = {
+          format = ":";
           tooltip = false;
         };
         network = {
