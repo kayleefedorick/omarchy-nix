@@ -82,6 +82,7 @@ window#waybar {
 #bluetooth.disabled { border-top-color: @red; }
 #bluetooth.connected { color: @green; }
 #battery { border-top-color: @cyan; }
+#battery.full { border-top-color: @green; }
 #battery.warning { color: @orange; }
 #battery.critical { color: @red; }
 #power-profiles-daemon.power-saver { border-top-color: @green; }

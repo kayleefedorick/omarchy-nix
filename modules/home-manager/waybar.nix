@@ -119,14 +119,14 @@ in
           tooltip-format-disconnected = "Disconnected";
           interval = 3;
           nospacing = 1;
-          on-click = "ghostty -e nmcli";
+          on-click = "kitty -e nmcli";
         };
         battery = {
           interval = 5;
           format = "{capacity}% {icon}";
           format-discharging = "{icon}";
           format-charging = "{icon}";
-          format-plugged = "";
+          format-plugged = "{icon}";
           format-icons = {
             charging = [
               "󰢜"
