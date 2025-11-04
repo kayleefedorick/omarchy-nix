@@ -7,53 +7,18 @@ inputs:
 let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
-  backgroundRgb = "rgb(${convert ", " palette.base00})";
-  foregroundRgb = "rgb(${convert ", " palette.base05})";
-  accent1Rgb = "rgb(${convert ", " palette.base08})";     # pink
-  accent2Rgb = "rgb(${convert ", " palette.base0B})";     # yellow
-  accent3Rgb = "rgb(${convert ", " palette.base03})";     # periwinkle
-  accent4Rgb = "rgb(${convert ", " palette.base09})";     # purple
+  #backgroundRgb = "rgb(${convert ", " palette.base00})";
+  #foregroundRgb = "rgb(${convert ", " palette.base05})";
+  #accent1Rgb = "rgb(${convert ", " palette.base08})";     # pink
+  #accent2Rgb = "rgb(${convert ", " palette.base0B})";     # yellow
+  #accent3Rgb = "rgb(${convert ", " palette.base03})";     # periwinkle
+  #accent4Rgb = "rgb(${convert ", " palette.base09})";     # purple
 in
 {
   home.file = {
     ".config/waybar/" = {
       source = ../../config/waybar;
       recursive = true;
-    };
-    ".config/waybar/theme.css" = {
-      text = ''
-        @define-color background ${backgroundRgb};
-        @define-color foreground ${foregroundRgb};
-        @define-color accent1 ${accent1Rgb};
-        @define-color accent2 ${accent2Rgb};
-        @define-color accent3 ${accent3Rgb};
-        @define-color accent4 ${accent4Rgb};
-
-        * {
-          color: @accent2; 
-        }
-        window#waybar {
-          background-color: @background;
-        }
-        #window * {
-          color: @accent2;
-        }
-        #clock {
-          color: @accent4;
-        }
-        #workspaces * {
-          color: @accent4;
-        }
-        #tray,
-        #bluetooth,
-        #network,
-        #wireplumber,
-        #cpu,
-        #power-profiles-daemon,
-        #battery {
-          color: @accent3;
-        }
-      '';
     };
   };
 
@@ -64,7 +29,7 @@ in
         layer = "top";
         position = "top";
         spacing = 0;
-        height = 26;
+        height = 24;
         modules-left = [
           "hyprland/workspaces"
         ];
@@ -96,7 +61,6 @@ in
             "7" = "7";
             "8" = "8";
             "9" = "9";
-            active = "󱓻";
           };
           persistent-workspaces = {
             "1" = [ ];

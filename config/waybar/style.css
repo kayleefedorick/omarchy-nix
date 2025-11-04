@@ -1,45 +1,67 @@
-
-@import "./theme.css";
+@import "./colors.css";
 * {
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: CaskaydiaMono Nerd Font;
-  font-size: 14px;
+    border: none;
+    border-radius: 0;
+    font-family: "DroidSansM Nerd Font";
+    font-size: 10pt;
+    min-height: 0;
 }
-
-#workspaces {
-  margin-left: 7px;
+window#waybar {
+    opacity: 1;
+    background: @background;
+    color: @foreground;
 }
-
 #workspaces button {
-  padding: 2px 6px;
-  margin-right: 3px;
+    padding: 0 0.8em;
+    color: @foreground;
+    border-top: 0.1em solid @background;
 }
 
-#window * {
-  padding-left: 14px;
-  padding-right: 14px;
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-image: linear-gradient(0deg, @selection, @background);
+}
+#workspaces button.active {
+    color: @green;
+    border-top-color: @green;
+}
+#workspaces button.urgent {
+    color: @red;
+}
+#workspaces button.empty {
+    color: @selection;
+}
+#workspaces button.special {
+    color: @yellow;
 }
 
-#custom-dropbox,
-#cpu,
-#power-profiles-daemon,
-#battery,
-#network,
-#bluetooth,
-#wireplumber,
-#tray,
-#clock {
-  background-color: transparent;
-  min-width: 12px;
-  margin-right: 13px;
+.module {
+    padding: 0 0em;
+    margin: 0 0.4em;
+    color: @foreground;
+    border-top: 0.1em solid @background;
 }
 
-tooltip {
-  padding: 2px;
-}
+#custom-drive.on { color: @green; }
+#custom-drive.off { color: @white; }
+#custom-vpn.off { color: @white; }
+#custom-vpn.on { color: @pink; }
 
-tooltip label {
-  padding: 2px;
-}
+#cpu { border-top-color: @white; }
+#memory { border-top-color: @white; }
+#network { border-top-color: @yellow; }
+#network.disconnected { border-top-color: @yellow; }
+#network.disabled { border-top-color: @red; }
+#backlight { border-top-color: @green; }
+#pulseaudio { border-top-color: @purple; }
+#pulseaudio.muted { border-top-color: @red; }
+#wireplumber { border-top-color: @purple; }
+#wireplumber.muted { border-top-color: @red; }
+#pulseaudio.bluetooth { color: @cyan; }
+#bluetooth { border-top-color: @cyan; }
+#bluetooth.connected { color: @cyan; }
+#battery { border-top-color: @red; }
+#battery.warning { color: @yellow; }
+#battery.critical { color: @red; }
+#custom-system { margin: 0 1em; }
