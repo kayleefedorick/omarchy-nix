@@ -58,7 +58,6 @@ in
     (import ./hypridle.nix)
     (import ./kitty.nix)
     (import ./micro.nix)
-    (import ./btop.nix)
     (import ./direnv.nix)
     (import ./git.nix)
     (import ./mako.nix)
